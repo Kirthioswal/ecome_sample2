@@ -1,0 +1,288 @@
+ECOMIQ
+UI & Frontend Product Brief
+Product Design & Frontend Engineering Reference
+1. Product Overview
+EcomIQ is a modern, data-heavy e-commerce operations and intelligence platform designed for D2C brands and e-commerce businesses.
+The platform brings operational, logistics, financial and marketing data into a single workspace and turns that data into actionable intelligence.
+Core product idea: EcomIQ = Operations + Data + Intelligence.
+The UI should allow a business user to move through the workflow: What happened → Why did it happen → What should I do?
+2. Target Users
+Business Owner / Founder — business health, revenue, orders, shipping, COD, NDR, marketing and AI insights.
+Operations Manager — orders, shipments, NDR, courier performance, delivery performance, weight issues and exceptions.
+Finance Team — COD, shipping charges, wallet, transactions, reconciliation, invoices and credit notes.
+Customer Support Team — orders, shipment tracking, NDR, customer history and delivery issues.
+Marketing Team — Meta Ads, Google Ads, Amazon Ads, campaign performance, ROAS, CAC and revenue attribution.
+Admin — workspaces, users, stores, integrations, courier accounts, billing and permissions.
+3. Product Information Architecture
+EcomIQ should use a workspace-based architecture.
+Dashboard
+Orders
+Shipments
+NDR
+Weight
+Couriers
+Warehouses
+Customers
+Finance: Overview, Wallet, COD, Transactions, Shipping Charges, Reconciliation, Invoices, Credit Notes
+Marketing: Overview, Meta Ads, Google Ads, Amazon Ads
+Analytics
+AI Insights
+AI Chat
+Settings: Workspace, Stores, Users, Integrations, Couriers, Notifications, Billing, API, Security
+4. Design Direction
+EcomIQ should not look like a generic SaaS admin panel. Avoid the standard 'sidebar + cards + blue buttons + generic charts' pattern.
+Visual personality: Modern + Technical + Premium + Operational.
+Dense but highly readable
+Strong information hierarchy
+Data-first
+Minimal decorative elements
+High-quality charts
+Contextual actions
+Excellent filtering
+Keyboard-friendly
+Responsive
+Fast-feeling interactions
+Clear status communication
+Progressive disclosure
+5. Application Shell
+Desktop is the primary experience. The shell should provide a consistent navigation and workspace context across the product.
+Left navigation: Dashboard, Orders, Shipments, NDR, Weight, Couriers, Warehouses, Customers, Finance, Marketing, Analytics, AI Insights, AI Chat, Settings.
+Header left: EcomIQ logo and workspace selector.
+Header center: global search.
+Header right: AI Assistant, Notifications, Help and Profile.
+The shell must support persistent context, breadcrumbs where useful, and fast navigation.
+6. Dashboard
+The dashboard is the executive command center. It should answer business, operational, financial, marketing and intelligence questions at a glance.
+Revenue, orders, AOV and growth
+Shipment volume and delivery success
+NDR and RTO rate
+Courier performance
+COD outstanding
+Shipping spend
+Wallet balance
+Logistics cost per order
+Ad spend, revenue, ROAS and CAC
+AI-generated anomalies, insights and recommended actions
+Include date ranges such as Today, Yesterday, 7 Days, 30 Days and Custom, with comparison to the previous period.
+7. Orders Module
+Orders should be a high-density operational table.
+Columns: Order ID, Date, Customer, Items, Amount, Payment, Channel, Warehouse, Shipment, Status, Actions.
+Search, advanced filters, date filter, store filter, payment filter, order status, bulk actions, export and column customization.
+Order detail should include Order Information, Customer Information, Items, Payment, Shipping, Warehouse, Shipment Timeline, NDR, Financial Information and Activity Log.
+8. Shipments Module
+Shipment management is a core operational module.
+Table: AWB, Order ID, Courier, Origin, Destination, Status, EDD, Actual Delivery, Weight, Shipping Cost, NDR and RTO.
+Shipment detail should include shipment timeline, tracking events, courier, package information, addresses, charges, weight, NDR history and RTO information.
+Timeline example: Order Created → AWB Assigned → Picked Up → In Transit → Out for Delivery → Delivered.
+9. NDR Module
+NDR should be designed around actionability, not just reporting.
+Show NDR shipments, action required, resolved cases and recovery rate.
+Table: AWB, Order, Customer, Courier, NDR Reason, Attempt, Age, Status and Action.
+Actions can include Call Customer, WhatsApp Customer, Reschedule, Change Address, Reattempt and RTO.
+10. Weight Management
+Show Declared Weight, Courier Weight, Difference, Additional Charge and Dispute Status.
+Provide a clear detail view and an obvious Raise Dispute action.
+The UI should make financial impact visible without requiring users to calculate differences manually.
+11. Courier Management
+Courier performance should be data-driven and comparable.
+Pickup success
+Delivery percentage
+NDR percentage
+RTO percentage
+Average delivery time
+Cost per shipment
+Weight disputes
+SLA adherence
+12. Warehouses
+Warehouse list with order volume, shipment volume, pickup performance and SLA.
+Warehouse detail: Overview, Orders, Shipments, Performance, Inventory and Settings.
+13. Customers — Customer 360
+Customer profiles should combine commercial, operational and service history.
+Total Orders
+Total Spend
+Average Order Value
+Delivered Orders
+Cancelled Orders
+RTO Orders
+NDR Orders
+Order history
+Shipment history
+Customer timeline
+Customer segmentation
+14. Finance
+Finance Overview
+Wallet
+COD
+Transactions
+Shipping Charges
+Reconciliation
+Invoices
+Credit Notes
+Finance dashboard should surface Wallet Balance, COD Outstanding, Shipping Spend, Refunds and Net Logistics Cost.
+15. Marketing
+EcomIQ should integrate marketing data from Meta Ads, Google Ads and Amazon Ads.
+Ad Spend
+Revenue
+ROAS
+CAC
+Orders
+Channel / Campaign / Ad Set / Ad breakdown
+Product and geography breakdowns
+Date comparison
+16. Analytics
+Analytics is the data exploration layer. Users should be able to select a Metric + Dimension + Filter + Time Period.
+Example: Revenue by State for the Last 30 Days.
+Saved reports
+Custom dashboards
+Export
+Drill-down
+Date comparison
+Reusable filters
+17. AI Insights
+AI Insights is a key EcomIQ differentiator. The system should automatically identify meaningful patterns and explain them.
+Recommended information hierarchy:
+Observation — What changed?
+Explanation — Why did it change?
+Action — What should the operator investigate or do next?
+Example: 'NDR increased 18% this week' → identify the main contributors → show affected shipments → provide an actionable next step.
+18. AI Chat
+AI Chat should behave like a business intelligence copilot.
+Natural-language questions about revenue, orders, couriers, RTO, NDR, shipments, customers and marketing.
+Responses can include text, tables, charts, KPI cards, drill-down links and follow-up questions.
+Example questions: 'Which courier has the highest RTO rate?', 'Why did delivery performance drop this week?', 'Show orders above ₹5,000 currently in NDR.'
+19. Integrations
+Stores: Shopify, WooCommerce, Custom
+Shipping: ShipIQ, Delhivery, BlueDart, DTDC and other supported courier integrations
+Marketing: Meta Ads, Google Ads, Amazon Ads
+Communication: WhatsApp
+Each integration should show connection status, last sync, sync status, data imported, settings and disconnect/reconnect controls.
+20. Settings
+Workspace
+Users & Roles
+Stores
+Warehouses
+Couriers
+Integrations
+Notifications
+Billing
+API
+Security
+21. Design System Requirements
+Build a reusable EcomIQ design system instead of designing isolated screens.
+Buttons, Inputs, Selects, Multi-selects and Search
+Date picker and Filter components
+Data tables and Pagination
+Tabs, Cards and KPI Cards
+Charts and Visualization wrappers
+Status badges
+Timeline
+Drawer and Modal
+Dropdowns, Tooltips and Toasts
+Empty, Loading, Error and Confirmation states
+Skeleton loaders
+22. Data Table System
+Tables are a core interaction pattern in EcomIQ and should be implemented as a reusable system.
+Sorting
+Filtering
+Search
+Pagination
+Column visibility
+Column resizing
+Row selection
+Bulk actions
+Export
+Sticky columns
+Sticky headers
+Loading, empty and error states
+Server-side pagination
+23. Filtering Framework
+EcomIQ will be heavily filter-driven. Create a reusable filter framework that can be shared across modules.
+Date
+Store
+Warehouse
+Courier
+Payment Type
+Order Status
+Shipment Status
+NDR Status
+Customer
+State
+City
+Filters should be composable, for example: Courier = Delhivery AND Payment = COD AND Status = NDR AND Date = Last 7 Days.
+24. UX Principles
+Information density without visual clutter.
+Actions should be contextual and close to the data they affect.
+Drill-down should be available throughout the product.
+Preserve user context when navigating between list and detail screens.
+Make data explainable — charts should help users understand what changed and why.
+Avoid forcing users through multiple screens for common operational actions.
+25. Responsive Design
+Desktop is the primary application experience, followed by laptop, tablet and mobile.
+Mobile should not simply shrink desktop screens. Data-heavy tables should transform into appropriate list/card views where necessary.
+26. Frontend Architecture
+Recommended implementation approach:
+Next.js / React
+TypeScript
+Tailwind CSS
+shadcn/ui or equivalent component foundation
+TanStack Query for server state
+TanStack Table for data-heavy tables
+Recharts / ECharts for visualizations
+Zod for validation
+The exact technology choices can be finalized with the frontend engineer, but the application should remain modular and reusable.
+App Shell
+Design System
+Shared Components
+Feature Modules
+API Layer
+State Management
+Utilities
+27. Recommended MVP UI Screens
+Phase 1 — Foundation
+Login
+Workspace Selection
+Main Application Shell
+Dashboard
+Global Search
+Notification Center
+Profile
+Phase 2 — Core Operations
+Orders List
+Order Detail
+Shipments List
+Shipment Detail
+NDR Dashboard
+NDR List
+NDR Detail
+Weight Reconciliation
+Phase 3 — Intelligence
+Courier Analytics
+Finance Dashboard
+Marketing Dashboard
+Analytics
+AI Insights
+AI Chat
+Phase 4 — Platform
+Integrations
+Stores
+Warehouses
+Users & Roles
+Workspace Settings
+28. Frontend Engineer Deliverables
+The expected output is not only a collection of Figma screens. The engineer should establish the foundation for a scalable product.
+EcomIQ design system
+Typography, color system, spacing, grid and icon rules
+Reusable components and interaction states
+User flows and navigation architecture
+High-fidelity desktop screens
+Responsive behavior for tablet and mobile
+Data-heavy table patterns
+Chart and analytics patterns
+Loading, empty, error and success states
+Reusable frontend implementation of App Shell, Tables, Filters, Charts, Forms, Drawers, Modals, Navigation and Dashboard widgets
+29. UX North Star
+EcomIQ should be designed around the loop:
+DATA  →  INSIGHT  →  DECISION  →  ACTION  →  RESULT
+The product should not merely report what happened. It should help the operator understand what happened and take the next action.
+30. Design Principle for the Engineer
+Do not design EcomIQ as a collection of dashboards. Design it as an operating system for an e-commerce business.

@@ -1,0 +1,485 @@
+/* ==========================================================================
+   ECOMIQ — APPLICATION SHELL & DYNAMIC DOCK LAYOUT
+   Foundation: Deep Black Canvas + Floating Obsidian Dock + Responsive Viewport
+   ========================================================================== */
+
+/* Main Full-Height Viewport Container */
+#main-content-container {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+  overflow-x: hidden;
+}
+
+/* ==========================================================================
+   EXPERIMENTAL FLOATING NAVIGATION DOCK
+   ========================================================================== */
+.floating-dock-outer {
+  position: fixed;
+  top: 18px;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1000;
+  pointer-events: none;
+  padding: 0 16px;
+  transition: all var(--transition-smooth);
+}
+
+.floating-os-dock {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 8px 14px;
+  background: rgba(13, 16, 23, 0.88);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-full);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8), 0 0 24px rgba(59, 130, 246, 0.15);
+  transition: all var(--transition-smooth);
+  max-width: 95vw;
+}
+
+.floating-os-dock:hover {
+  border-color: rgba(255, 255, 255, 0.22);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9), 0 0 32px rgba(59, 130, 246, 0.25);
+}
+
+/* Brand Glyph & Wordmark */
+.dock-brand-cluster {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-right: 12px;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
+
+.dock-brand-glyph {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #2563EB 0%, #A855F7 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  box-shadow: 0 0 14px rgba(59, 130, 246, 0.5);
+}
+
+.dock-brand-text {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.dock-brand-text span {
+  background: linear-gradient(135deg, #60A5FA 0%, #C084FC 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dock-status-pulse {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: #10B981;
+  background: rgba(16, 185, 129, 0.1);
+  padding: 2px 7px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.dock-status-pulse::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 6px #10B981;
+  animation: pulse-ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes pulse-ping {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.3); opacity: 1; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+/* Core Environment Navigation Buttons */
+.dock-environments-group {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.dock-env-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--text-secondary);
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.dock-env-btn:hover {
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.dock-env-btn.active-operate {
+  background: rgba(59, 130, 246, 0.16);
+  border-color: rgba(59, 130, 246, 0.5);
+  color: #60A5FA;
+  box-shadow: 0 0 16px rgba(59, 130, 246, 0.3);
+}
+
+.dock-env-btn.active-money {
+  background: rgba(132, 204, 22, 0.16);
+  border-color: rgba(132, 204, 22, 0.5);
+  color: #A3E635;
+  box-shadow: 0 0 16px rgba(132, 204, 22, 0.3);
+}
+
+.dock-env-btn.active-grow {
+  background: rgba(249, 115, 22, 0.16);
+  border-color: rgba(249, 115, 22, 0.5);
+  color: #FB923C;
+  box-shadow: 0 0 16px rgba(249, 115, 22, 0.3);
+}
+
+.dock-env-btn.active-intelligence {
+  background: rgba(168, 85, 247, 0.16);
+  border-color: rgba(168, 85, 247, 0.5);
+  color: #C084FC;
+  box-shadow: 0 0 16px rgba(168, 85, 247, 0.3);
+}
+
+/* Dock Right Controls */
+.dock-controls-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-left: 12px;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dock-tool-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.dock-tool-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #FFFFFF;
+}
+
+.dock-workspace-toggle {
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+  border: 1px solid rgba(96, 165, 250, 0.4);
+  color: #FFFFFF;
+  font-weight: 700;
+  box-shadow: 0 0 14px rgba(37, 99, 235, 0.4);
+}
+
+.dock-workspace-toggle:hover {
+  background: linear-gradient(135deg, #1D4ED8 0%, #2563EB 100%);
+  box-shadow: 0 0 22px rgba(59, 130, 246, 0.6);
+}
+
+/* Morphing Sub-Navigation Bar (Sub-Dock) */
+.morphing-subdock {
+  pointer-events: auto;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 14px;
+  background: rgba(17, 19, 24, 0.82);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: var(--radius-full);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transform: translateY(-8px);
+  pointer-events: none;
+  transition: all var(--transition-smooth);
+}
+
+.morphing-subdock.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.subdock-item {
+  font-size: 11px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--text-tertiary);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.subdock-item:hover {
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.subdock-item.active {
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* ==========================================================================
+   ENTERPRISE WORKSPACE MODE (FULL APP SHELL)
+   ========================================================================== */
+.app-os-shell {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: var(--bg-canvas);
+}
+
+#os-sidebar-mount {
+  height: 100%;
+  flex-shrink: 0;
+  z-index: 120;
+}
+
+.app-os-viewport {
+  flex: 1;
+  height: 100%;
+  overflow-y: auto;
+  background: var(--bg-canvas);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-top: 72px;
+}
+
+/* Sidebar Styles */
+.app-sidebar {
+  width: 240px;
+  background: var(--bg-surface, #111318);
+  border-right: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.08));
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  transition: width var(--transition-smooth, 0.25s ease);
+  user-select: none;
+}
+
+.app-sidebar.collapsed {
+  width: 68px;
+}
+
+.sidebar-nav-container {
+  padding: 80px 10px 16px 10px;
+  overflow-y: auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.nav-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.nav-section-title {
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-tertiary, #64748B);
+  padding: 6px 12px 4px 12px;
+}
+
+.app-sidebar.collapsed .nav-section-title {
+  display: none;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm, 6px);
+  color: var(--text-secondary, #94A3B8);
+  cursor: pointer;
+  transition: all var(--transition-fast, 0.15s ease);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.nav-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary, #F8FAFC);
+}
+
+.nav-item.active {
+  background: rgba(37, 99, 235, 0.12);
+  color: #60A5FA;
+  border-left: 2px solid #3B82F6;
+  font-weight: 600;
+}
+
+.nav-item-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden;
+}
+
+.nav-icon {
+  width: 16px !important;
+  height: 16px !important;
+  min-width: 16px !important;
+  max-width: 16px !important;
+  max-height: 16px !important;
+  flex-shrink: 0;
+}
+
+.nav-label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.app-sidebar.collapsed .nav-label {
+  display: none;
+}
+
+.nav-counter {
+  font-size: 11px;
+  font-family: var(--font-mono);
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-secondary, #94A3B8);
+}
+
+.nav-counter.alert-danger {
+  background: rgba(239, 68, 68, 0.15);
+  color: #EF4444;
+}
+
+.nav-counter.alert-warning {
+  background: rgba(245, 158, 11, 0.15);
+  color: #F59E0B;
+}
+
+.nav-counter.alert-ai {
+  background: rgba(168, 85, 247, 0.15);
+  color: #A855F7;
+}
+
+.app-sidebar.collapsed .nav-counter {
+  display: none;
+}
+
+.sidebar-footer {
+  padding: 12px 10px;
+  border-top: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.08));
+}
+
+.collapse-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm, 6px);
+  color: var(--text-tertiary, #64748B);
+  font-size: 12px;
+  cursor: pointer;
+  transition: all var(--transition-fast, 0.15s ease);
+}
+
+.collapse-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary, #F8FAFC);
+}
+
+/* Top Mini Workspace Bar when in Full App Mode */
+.workspace-top-bar {
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  background: rgba(17, 19, 24, 0.85);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-subtle);
+  position: sticky;
+  top: 0;
+  z-index: 90;
+}
+
+/* View Content Inner Container */
+.view-content-wrapper {
+  padding: 24px 32px 64px;
+  max-width: 1600px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .view-content-wrapper {
+    padding: 16px 16px 48px;
+  }
+  .floating-os-dock {
+    gap: 6px;
+    padding: 6px 10px;
+  }
+  .dock-brand-text, .dock-status-pulse {
+    display: none;
+  }
+  .dock-env-btn {
+    padding: 5px 8px;
+    font-size: 11px;
+  }
+}

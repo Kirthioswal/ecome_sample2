@@ -1,0 +1,155 @@
+/* ==========================================================================
+   ECOMIQ — DESIGN SYSTEM TOKENS (PREMIUM DARK OPERATING SYSTEM)
+   Foundation: Deep Black + Graphite + Charcoal + Electric Data + Floating Light
+   ========================================================================== */
+
+:root {
+  /* Dark Foundation */
+  --bg-canvas: #08090B;              /* Deep Near-Black */
+  --bg-canvas-subtle: #0D0F14;       /* Subtle Elevation */
+  --bg-surface: #111318;             /* Primary Surface */
+  --bg-surface-secondary: #171A20;   /* Secondary Surface */
+  --bg-surface-elevated: #1D2129;    /* Elevated Surface */
+  --bg-surface-high: #242934;        /* High-Highlight Surface */
+  --bg-surface-glass: rgba(17, 19, 24, 0.75);
+  --bg-surface-glass-heavy: rgba(13, 15, 20, 0.88);
+
+  /* Contrast Overlays & Shimmers */
+  --bg-dark-section: #050608;
+  --bg-dark-surface: #0E1015;
+  --bg-dark-surface-elevated: #151821;
+  --bg-dark-border: rgba(255, 255, 255, 0.08);
+
+  /* Borders (Translucent White / Subtle Graphite) */
+  --border-subtle: rgba(255, 255, 255, 0.07);
+  --border-light: rgba(255, 255, 255, 0.12);
+  --border-default: rgba(255, 255, 255, 0.18);
+  --border-strong: rgba(255, 255, 255, 0.28);
+  --border-glass: rgba(255, 255, 255, 0.1);
+
+  /* ==========================================================================
+     CONTROLLED ACCENT COLOR SYSTEM (ELECTRIC DATA POP)
+     ========================================================================== */
+  /* OPERATIONS → Electric Blue */
+  --color-ops: #3B82F6;
+  --color-ops-dark: #1D4ED8;
+  --color-ops-light: #60A5FA;
+  --color-ops-bg: rgba(59, 130, 246, 0.12);
+  --color-ops-border: rgba(59, 130, 246, 0.35);
+  --color-ops-glow: 0 0 24px rgba(59, 130, 246, 0.4);
+
+  /* LOGISTICS → Cyan */
+  --color-logistics: #00E5FF;
+  --color-logistics-dark: #00B4D8;
+  --color-logistics-light: #67E8F9;
+  --color-logistics-bg: rgba(0, 229, 255, 0.12);
+  --color-logistics-border: rgba(0, 229, 255, 0.35);
+  --color-logistics-glow: 0 0 24px rgba(0, 229, 255, 0.4);
+
+  /* FINANCE → Lime / Acid Green */
+  --color-finance: #84CC16;
+  --color-finance-dark: #4D7C0F;
+  --color-finance-light: #A3E635;
+  --color-finance-bg: rgba(132, 204, 22, 0.12);
+  --color-finance-border: rgba(132, 204, 22, 0.35);
+  --color-finance-glow: 0 0 24px rgba(132, 204, 22, 0.4);
+
+  /* MARKETING → Orange */
+  --color-marketing: #F97316;
+  --color-marketing-dark: #C2410C;
+  --color-marketing-light: #FB923C;
+  --color-marketing-bg: rgba(249, 115, 22, 0.12);
+  --color-marketing-border: rgba(249, 115, 22, 0.35);
+  --color-marketing-glow: 0 0 24px rgba(249, 115, 22, 0.4);
+
+  /* NDR → Coral */
+  --color-ndr: #FF4B4B;
+  --color-ndr-dark: #DC2626;
+  --color-ndr-light: #FB7185;
+  --color-ndr-bg: rgba(255, 75, 75, 0.14);
+  --color-ndr-border: rgba(255, 75, 75, 0.38);
+  --color-ndr-glow: 0 0 24px rgba(255, 75, 75, 0.45);
+
+  /* INTELLIGENCE → Violet */
+  --color-intelligence: #A855F7;
+  --color-intelligence-dark: #7E22CE;
+  --color-intelligence-light: #C084FC;
+  --color-intelligence-bg: rgba(168, 85, 247, 0.14);
+  --color-intelligence-border: rgba(168, 85, 247, 0.38);
+  --color-intelligence-glow: 0 0 24px rgba(168, 85, 247, 0.45);
+
+  /* AI → Magenta / Electric Purple */
+  --color-ai: #D946EF;
+  --color-ai-dark: #A21CAF;
+  --color-ai-light: #F472B6;
+  --color-ai-bg: rgba(217, 70, 239, 0.14);
+  --color-ai-border: rgba(217, 70, 239, 0.4);
+  --color-ai-glow: 0 0 30px rgba(217, 70, 239, 0.5);
+
+  /* Semantic State Colors */
+  --color-success: #10B981;
+  --color-success-bg: rgba(16, 185, 129, 0.12);
+  --color-success-border: rgba(16, 185, 129, 0.35);
+  --color-warning: #F59E0B;
+  --color-warning-bg: rgba(245, 158, 11, 0.12);
+  --color-warning-border: rgba(245, 158, 11, 0.35);
+  --color-danger: #EF4444;
+  --color-danger-bg: rgba(239, 68, 68, 0.14);
+  --color-danger-border: rgba(239, 68, 68, 0.35);
+
+  /* Typography / Text Inks */
+  --text-primary: #F8FAFC;      /* Near-White */
+  --text-secondary: #94A3B8;    /* Cool Gray */
+  --text-tertiary: #64748B;     /* Muted Slate */
+  --text-muted: #475569;        /* Deep Charcoal */
+  --text-inverse: #08090B;
+
+  /* Typography Families */
+  --font-display: 'Space Grotesk', 'Sora', sans-serif;
+  --font-ui: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Gradients */
+  --gradient-dark-canvas: radial-gradient(circle at 50% 0%, #151821 0%, #08090B 75%);
+  --gradient-ops: linear-gradient(135deg, #3B82F6 0%, #00E5FF 100%);
+  --gradient-intelligence: linear-gradient(135deg, #A855F7 0%, #D946EF 100%);
+  --gradient-finance: linear-gradient(135deg, #84CC16 0%, #10B981 100%);
+  --gradient-marketing: linear-gradient(135deg, #F97316 0%, #FB923C 100%);
+  --gradient-ndr: linear-gradient(135deg, #FF4B4B 0%, #FB7185 100%);
+  --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  /* Radii */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+  --radius-full: 9999px;
+
+  /* Dark Elevation Shadows & Glows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 16px 40px -8px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.06);
+  --shadow-xl: 0 25px 60px -12px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(255, 255, 255, 0.08);
+  --shadow-floating: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(59, 130, 246, 0.15);
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 250ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-spring: 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}

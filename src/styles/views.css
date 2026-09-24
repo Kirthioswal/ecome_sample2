@@ -1,0 +1,981 @@
+/* ==========================================================================
+   ECOMIQ — OPERATING SYSTEM SHOWCASE & VIEW STYLES
+   Visual Personality: Dramatically Dark, Futuristic, Electric Data, Floating UI
+   ========================================================================== */
+
+/* Full Viewport Canvas Container */
+.os-experience-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  padding-bottom: 120px;
+}
+
+/* Background Particle & Grid Canvas */
+#os-background-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.65;
+}
+
+/* Smoky Radial Ambient Glows */
+.os-ambient-glows {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.ambient-glow-blue {
+  position: absolute;
+  top: -10%;
+  left: 15%;
+  width: 800px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, transparent 70%);
+  filter: blur(80px);
+}
+
+.ambient-glow-purple {
+  position: absolute;
+  top: 35%;
+  right: -5%;
+  width: 700px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.1) 0%, transparent 70%);
+  filter: blur(80px);
+}
+
+.ambient-glow-lime {
+  position: absolute;
+  top: 70%;
+  left: 5%;
+  width: 600px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(132, 204, 22, 0.08) 0%, transparent 70%);
+  filter: blur(80px);
+}
+
+/* Section Wrapper */
+.os-section {
+  position: relative;
+  z-index: 10;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 100px 32px;
+}
+
+/* Section Header Typography */
+.section-meta-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+}
+
+.meta-tag-blue {
+  color: #60A5FA;
+  background: rgba(59, 130, 246, 0.12);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.meta-tag-lime {
+  color: #A3E635;
+  background: rgba(132, 204, 22, 0.12);
+  border: 1px solid rgba(132, 204, 22, 0.3);
+}
+
+.meta-tag-orange {
+  color: #FB923C;
+  background: rgba(249, 115, 22, 0.12);
+  border: 1px solid rgba(249, 115, 22, 0.3);
+}
+
+.meta-tag-violet {
+  color: #C084FC;
+  background: rgba(168, 85, 247, 0.12);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+.meta-tag-coral {
+  color: #FF4B4B;
+  background: rgba(255, 75, 75, 0.12);
+  border: 1px solid rgba(255, 75, 75, 0.3);
+}
+
+.section-headline {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #FFFFFF;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.section-subheadline {
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  color: var(--text-secondary);
+  max-width: 680px;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   1. HERO SECTION (DRAMATIC DARK HERO WITH FLOATING FRAGMENTS)
+   ========================================================================== */
+.hero-operating-system {
+  min-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  padding-top: 130px;
+  padding-bottom: 60px;
+}
+
+.hero-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background: rgba(17, 19, 24, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-full);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: #94A3B8;
+  margin-bottom: 28px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.15);
+}
+
+.hero-badge-pill .pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #3B82F6;
+  box-shadow: 0 0 8px #3B82F6;
+}
+
+.hero-main-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 6.2vw, 5.4rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  color: #FFFFFF;
+  max-width: 1040px;
+  margin-bottom: 24px;
+}
+
+.hero-main-title span.glow-text {
+  background: linear-gradient(135deg, #60A5FA 0%, #C084FC 50%, #A3E635 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 40px rgba(96, 165, 250, 0.3);
+}
+
+.hero-subtitle-loop {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  font-weight: 600;
+  color: #E2E8F0;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+
+.hero-subtitle-loop span {
+  color: #60A5FA;
+}
+
+.hero-description {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  max-width: 640px;
+  margin: 0 auto 36px;
+  line-height: 1.6;
+}
+
+.hero-actions-cluster {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+
+/* Floating Product Fragments (Orbiting with Cursor-Reactive Parallax) */
+.hero-floating-universe {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  height: 380px;
+  margin-top: 20px;
+}
+
+.floating-fragment {
+  position: absolute;
+  background: rgba(17, 19, 24, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-lg);
+  padding: 16px 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  transition: transform 0.15s ease-out, border-color 0.2s, box-shadow 0.2s;
+  user-select: none;
+  z-index: 20;
+}
+
+.floating-fragment:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 25px rgba(59, 130, 246, 0.3);
+  transform: scale(1.04) !important;
+}
+
+.fragment-frag-1 {
+  top: 15%;
+  left: 4%;
+  border-left: 3px solid #84CC16;
+}
+
+.fragment-frag-2 {
+  top: 8%;
+  right: 6%;
+  border-left: 3px solid #00E5FF;
+}
+
+.fragment-frag-3 {
+  bottom: 22%;
+  left: 8%;
+  border-left: 3px solid #FF4B4B;
+}
+
+.fragment-frag-4 {
+  bottom: 12%;
+  right: 10%;
+  border-left: 3px solid #F97316;
+}
+
+.fragment-frag-5 {
+  top: 48%;
+  left: 38%;
+  border-left: 3px solid #D946EF;
+}
+
+.fragment-frag-6 {
+  bottom: -4%;
+  left: 28%;
+  border-left: 3px solid #3B82F6;
+}
+
+.fragment-icon-wrap {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.fragment-meta {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 2px;
+}
+
+.fragment-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-tertiary);
+}
+
+.fragment-value {
+  font-family: var(--font-mono);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.2;
+}
+
+.fragment-subtext {
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   2. FLOATING DATA UNIVERSE (DATA → INSIGHT → DECISION → ACTION → RESULT)
+   ========================================================================== */
+.universe-loop-container {
+  background: rgba(17, 19, 24, 0.7);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: var(--radius-2xl);
+  padding: 40px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+  margin-top: 32px;
+}
+
+.north-star-steps-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  position: relative;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 1024px) {
+  .north-star-steps-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.north-star-step-node {
+  background: var(--bg-surface-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 20px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+  transition: all var(--transition-fast);
+}
+
+.north-star-step-node:hover {
+  border-color: var(--color-ops);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.25);
+  transform: translateY(-2px);
+}
+
+.node-step-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-ops-light);
+}
+
+.node-step-title {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.node-step-desc {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+
+/* Interactive Click-to-Expand Tiles Grid */
+.universe-expandable-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 20px;
+}
+
+.expandable-universe-card {
+  background: rgba(23, 26, 32, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  cursor: pointer;
+  transition: all var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.expandable-universe-card:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.expandable-universe-card.expanded {
+  border-color: var(--color-ops);
+  background: #111318;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.9), 0 0 25px rgba(59, 130, 246, 0.2);
+}
+
+.card-unexpanded-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-expand-content {
+  display: none;
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  flex-direction: column;
+  gap: 12px;
+}
+
+.expandable-universe-card.expanded .card-expand-content {
+  display: flex;
+}
+
+/* ==========================================================================
+   3. OPERATE INTERACTIVE ENVIRONMENT
+   ========================================================================== */
+.operate-environment-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Interconnected Systems Pipeline */
+.operate-pipeline-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  background: rgba(17, 19, 24, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-xl);
+  padding: 24px;
+  backdrop-filter: blur(16px);
+}
+
+@media (max-width: 900px) {
+  .operate-pipeline-bar {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pipeline-node-box {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px 20px;
+  background: var(--bg-surface-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  position: relative;
+}
+
+.pipeline-node-box:hover {
+  border-color: var(--color-ops);
+  background: var(--bg-surface-elevated);
+}
+
+.pipeline-node-box.active-pipeline {
+  border-color: var(--color-ops);
+  box-shadow: 0 0 16px rgba(59, 130, 246, 0.3);
+}
+
+/* Live Operational Orders Strip */
+.orders-live-telemetry-panel {
+  background: rgba(17, 19, 24, 0.85);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-xl);
+  padding: 28px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+}
+
+.telemetry-filter-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.telemetry-order-row {
+  display: grid;
+  grid-template-columns: 1.2fr 1.2fr 1fr 1fr 1fr auto;
+  gap: 16px;
+  padding: 14px 18px;
+  background: var(--bg-surface-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-md);
+  margin-bottom: 8px;
+  align-items: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.telemetry-order-row:hover {
+  background: var(--bg-surface-elevated);
+  border-color: rgba(96, 165, 250, 0.4);
+  transform: translateX(4px);
+}
+
+@media (max-width: 900px) {
+  .telemetry-order-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+}
+
+/* ==========================================================================
+   4. NDR DELIVERY RECOVERY FLOW (VISUAL SHOWPIECE)
+   ========================================================================== */
+.ndr-recovery-showpiece-container {
+  background: radial-gradient(circle at 50% 30%, #1a1015 0%, #0d0e12 80%);
+  border: 1px solid rgba(255, 75, 75, 0.25);
+  border-radius: var(--radius-2xl);
+  padding: 48px 36px;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.9), 0 0 35px rgba(255, 75, 75, 0.12);
+  margin-top: 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+.ndr-flow-stepper-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 40px 1.5fr 40px 1.8fr 40px 1.4fr;
+  align-items: center;
+  gap: 8px;
+  margin-top: 36px;
+}
+
+@media (max-width: 1100px) {
+  .ndr-flow-stepper-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .ndr-flow-arrow {
+    transform: rotate(90deg);
+    margin: 8px auto;
+  }
+}
+
+.ndr-step-block {
+  background: rgba(23, 26, 32, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ndr-flow-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 20px;
+}
+
+.ndr-action-btn-pill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.ndr-action-btn-pill:hover, .ndr-action-btn-pill.simulated-active {
+  background: rgba(255, 75, 75, 0.18);
+  border-color: #FF4B4B;
+  color: #FFFFFF;
+  box-shadow: 0 0 15px rgba(255, 75, 75, 0.4);
+}
+
+.ndr-recovered-box {
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  border-radius: var(--radius-lg);
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(16, 185, 129, 0.2);
+}
+
+/* ==========================================================================
+   5. MONEY EXPERIENCE (LARGE FLOATING NUMBERS & GRAPHS)
+   ========================================================================== */
+.money-huge-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.money-floating-tile {
+  background: rgba(17, 19, 24, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-xl);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+  transition: all var(--transition-smooth);
+}
+
+.money-floating-tile:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-finance);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 25px rgba(132, 204, 22, 0.2);
+}
+
+.money-metric-val {
+  font-family: var(--font-mono);
+  font-size: clamp(2.2rem, 3.4vw, 3.2rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #FFFFFF;
+  line-height: 1.1;
+  margin: 12px 0 6px;
+  z-index: 2;
+}
+
+.money-metric-label {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  z-index: 2;
+}
+
+.money-sparkline-svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 90px;
+  width: 100%;
+  pointer-events: none;
+  opacity: 0.35;
+  transition: opacity var(--transition-fast);
+}
+
+.money-floating-tile:hover .money-sparkline-svg {
+  opacity: 0.7;
+}
+
+/* ==========================================================================
+   6. GROW & MARKETING EXPERIENCE (ROAS, AD SPEND, CAMPAIGN BUBBLES)
+   ========================================================================== */
+.grow-marketing-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 24px;
+  margin-top: 32px;
+}
+
+@media (max-width: 1000px) {
+  .grow-marketing-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.campaign-bubble-panel {
+  background: rgba(17, 19, 24, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-xl);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.campaign-row-item {
+  background: var(--bg-surface-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.campaign-row-item:hover {
+  background: var(--bg-surface-elevated);
+  border-color: var(--color-marketing);
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   7. AI INTELLIGENCE — THE HERO OF THE PRODUCT
+   ========================================================================== */
+.ai-core-showcase-container {
+  background: radial-gradient(circle at 50% 40%, #1d0f28 0%, #09090e 75%);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  border-radius: var(--radius-2xl);
+  padding: 56px 40px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.95), 0 0 45px rgba(168, 85, 247, 0.15);
+  margin-top: 36px;
+  position: relative;
+  overflow: hidden;
+}
+
+.ai-nucleus-centerpiece {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 48px;
+  position: relative;
+}
+
+.ai-pulsing-orb {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #D946EF 0%, #7E22CE 70%, transparent 100%);
+  box-shadow: 0 0 60px #D946EF, 0 0 100px rgba(168, 85, 247, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+  animation: orb-breathe 4s ease-in-out infinite alternate;
+}
+
+@keyframes orb-breathe {
+  0% { transform: scale(0.92); box-shadow: 0 0 40px #D946EF; }
+  100% { transform: scale(1.08); box-shadow: 0 0 80px #D946EF, 0 0 120px rgba(168, 85, 247, 0.6); }
+}
+
+.ai-diagnostic-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 24px;
+}
+
+.ai-diagnostic-card {
+  background: rgba(17, 19, 24, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-xl);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
+  transition: all var(--transition-fast);
+}
+
+.ai-diagnostic-card:hover {
+  border-color: #C084FC;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9), 0 0 25px rgba(168, 85, 247, 0.25);
+  transform: translateY(-2px);
+}
+
+.diag-step {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.diag-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.diag-val {
+  font-size: 13px;
+  color: #E2E8F0;
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   8. ASK ECOMIQ — INTERACTIVE AI COMMAND INTERFACE
+   ========================================================================== */
+.ask-ecomiq-terminal-card {
+  background: #0D0F14;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-2xl);
+  padding: 36px;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.95);
+  margin-top: 32px;
+}
+
+.ask-chips-strip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.ask-prompt-chip {
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.ask-prompt-chip:hover {
+  background: rgba(168, 85, 247, 0.15);
+  border-color: #A855F7;
+  color: #FFFFFF;
+}
+
+.ask-input-box-wrapper {
+  display: flex;
+  align-items: center;
+  background: #151821;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-lg);
+  padding: 8px 16px;
+  gap: 12px;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.ask-input-field {
+  flex: 1;
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  color: #FFFFFF;
+  outline: none;
+}
+
+/* AI Analysis Answer Simulation Box */
+.ai-simulated-answer-box {
+  margin-top: 24px;
+  padding: 24px;
+  background: rgba(17, 19, 24, 0.8);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: 0 0 25px rgba(168, 85, 247, 0.15);
+}
+
+/* ==========================================================================
+   9. INTERACTIVE TILE ZOO (SECTION 15)
+   ========================================================================== */
+.tiles-zoo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 32px;
+}
+
+.zoo-tile {
+  background: rgba(17, 19, 24, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-xl);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  position: relative;
+  min-height: 190px;
+}
+
+/* Flip Tile */
+.zoo-tile-flip {
+  perspective: 1000px;
+}
+
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.zoo-tile-flip.is-flipped .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-front, .flip-back {
+  position: absolute;
+  inset: 0;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.flip-back {
+  transform: rotateY(180deg);
+  background: #171A20;
+  border-radius: var(--radius-lg);
+  padding: 8px;
+}
+
+/* Magnetic Tile */
+.zoo-tile-magnetic {
+  transition: transform 0.15s ease-out;
+}
+
+/* Live Ticking Tile */
+.ticking-val {
+  font-family: var(--font-mono);
+  font-size: 2rem;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+/* ==========================================================================
+   10. CTA & SYSTEM STATUS FOOTER
+   ========================================================================== */
+.os-footer-cta {
+  background: radial-gradient(circle at 50% 0%, #151d33 0%, #08090B 80%);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 80px 32px 60px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
